@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Destina Aulia Putri</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    body { box-sizing: border-box; }
+    * { font-family: 'Poppins', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .gradient-bg { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+    .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .btn-primary { background: linear-gradient(135deg, #e94560, #ff6b6b); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(233, 69, 96, 0.5); }
+    .nav-link { position: relative; transition: color 0.3s ease; }
+    .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: #e94560; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+    .info-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.1); }
+    .hobby-tag { background: rgba(233, 69, 96, 0.2); border: 1px solid rgba(233, 69, 96, 0.3); transition: all 0.3s ease; }
+    .fade-in { animation: fadeIn 0.8s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .login-modal, .contact-modal { background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(5px); }
+    .input-field { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; }
+    .input-field:focus { border-color: #e94560; outline: none; }
+  </style>
+ </head>
+ <body class="h-full gradient-bg text-white overflow-auto">
+  <div id="app" class="min-h-full w-full">
+   <nav class="fixed top-0 left-0 right-0 z-50 glass-card">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex items-center justify-between h-16">
+      <div class="flex items-center gap-2">
+       <div class="w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 to-red-500 flex items-center justify-center font-bold text-sm">D</div>
+       <span class="font-display font-semibold text-lg" id="nav-name">Destina</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+       <a href="#home" class="nav-link text-gray-300 hover:text-white text-sm font-medium">Beranda</a> 
+       <a href="#about" class="nav-link text-gray-300 hover:text-white text-sm font-medium">Tentang</a> 
+       <a href="#contact" class="nav-link text-gray-300 hover:text-white text-sm font-medium">Kontak</a>
+      </div>
+      <button id="loginBtn" class="px-4 py-2 text-sm font-medium text-white glass-card rounded-full hover:bg-white/10 transition-all"> Login </button>
+     </div>
+    </div>
+   </nav>
+
+   <section id="home" class="min-h-full flex items-center justify-center px-4 pt-20 pb-10">
+    <div class="max-w-4xl mx-auto w-full text-center fade-in">
+      <p class="text-pink-400 font-medium mb-2 text-sm tracking-wider uppercase">Selamat Datang di Portfolio Saya</p>
+      <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold mb-4 leading-tight" id="hero-name">Destina Aulia Putri</h1>
+      <div class="flex flex-wrap gap-3 mb-6 justify-center">
+        <span class="px-4 py-1.5 glass-card rounded-full text-sm" id="hero-class">Kelas 12</span> 
+        <span class="px-4 py-1.5 glass-card rounded-full text-sm" id="hero-major">Jurusan TJKT</span>
+      </div>
+      <p class="text-gray-300 text-base lg:text-xl mb-8 max-w-2xl mx-auto" id="hero-description">
+        Saya adalah siswi yang bersemangat dalam mempelajari teknologi jaringan dan komputer. Saya percaya bahwa dengan kerja keras dan dedikasi, kita bisa mencapai impian kita.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <button id="contactBtn" class="btn-primary px-8 py-3 rounded-full font-semibold text-white"> 
+          <span id="contact-btn-text">Hubungi Saya</span> → 
+        </button> 
+        <a href="#about" class="px-8 py-3 rounded-full font-semibold glass-card hover:bg-white/10 transition-all"> Tentang Saya </a>
+      </div>
+    </div>
+   </section>
+
+   <section id="about" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-12 fade-in">
+      <p class="text-pink-400 font-medium mb-2 text-sm tracking-wider uppercase">Kenali Saya Lebih Dekat</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold">Tentang Saya</h2>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6">
+      <div class="info-card glass-card rounded-2xl p-6 fade-in">
+       <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-500 to-red-500 flex items-center justify-center mb-4 text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+       </div>
+       <h3 class="font-semibold text-lg mb-2">Pendidikan</h3>
+       <p class="text-gray-400 text-sm" id="about-education">Siswa kelas 12 Jurusan Teknik Jaringan Komputer dan Telekomunikasi (TJKT)</p>
+      </div>
+      <div class="info-card glass-card rounded-2xl p-6 fade-in" style="animation-delay: 0.1s;">
+       <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-500 to-red-500 flex items-center justify-center mb-4 text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+       </div>
+       <h3 class="font-semibold text-lg mb-2">Hobi</h3>
+       <div class="flex flex-wrap gap-2"><span class="hobby-tag px-3 py-1 rounded-full text-sm text-pink-300" id="hobby-tag">🏃‍♀️ Running</span> <span class="hobby-tag px-3 py-1 rounded-full text-sm text-pink-300">😴 Tidur</span></div>
+      </div>
+      <div class="info-card glass-card rounded-2xl p-6 fade-in" style="animation-delay: 0.2s;">
+       <div class="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-500 to-red-500 flex items-center justify-center mb-4 text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+       </div>
+       <h3 class="font-semibold text-lg mb-2">Motto</h3>
+       <p class="text-gray-400 text-sm italic">"Terus belajar dan berkembang setiap hari."</p>
+      </div>
+     </div>
+    </div>
+   </section>
+
+   <footer id="contact" class="py-10 px-4 border-t border-white/10">
+    <div class="max-w-6xl mx-auto text-center">
+     <p class="text-gray-400 text-sm" id="footer-name">© 2024 Destina Aulia Putri. All rights reserved.</p>
+    </div>
+   </footer>
+  </div>
+
+  <script>
+    // Modal & Smooth Scroll Logic
+    const loginModal = document.getElementById('loginModal');
+    const contactModal = document.getElementById('contactModal');
+    const loginBtn = document.getElementById('loginBtn');
+    const contactBtn = document.getElementById('contactBtn');
+
+    loginBtn?.addEventListener('click', () => loginModal?.classList.replace('hidden', 'flex'));
+    contactBtn?.addEventListener('click', () => contactModal?.classList.replace('hidden', 'flex'));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+ </body>
+</html>
